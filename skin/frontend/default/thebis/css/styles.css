@@ -1,0 +1,959 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* Reset ================================================================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li, button,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+:focus {/* remember to define focus styles! */
+	outline: 0;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+p {
+line-height:16px;
+}
+
+a img {
+	border: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {	
+	font-family: "Arial", Helvetica, sans-serif;
+	height:100%;
+	width:100%;
+}
+
+button::-moz-focus-inner, /* Button margin FF fix */
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {border:0;padding:0;margin:0;}
+
+/* ----------------------------------------------
+	Global Structure
+---------------------------------------------- */
+
+html {
+	background-image: url('../img/bg_thebis.jpg'); 
+	background-repeat:repeat-x;
+}
+
+.page {
+	margin: 0px auto;
+}
+
+#wrapper { 
+	width:960px; 
+	margin:0 auto; 
+}
+
+#main-container {
+	margin:0 auto;
+}
+
+#main { 
+	width:960px;
+	float:left; 
+	overflow:hidden;
+	}
+
+#col-main { 
+	width:720px;
+	height:100%;	
+	margin:0 20px 0 0; 
+	float:left;
+}
+
+.col-right{ 
+	width:220px; 
+	min-height:300px; 
+	float:left;
+}
+
+/* ----------------------------------------------
+	Global Elements
+---------------------------------------------- */
+
+@font-face {
+	font-family: 'MetaNormalRo';
+	src: url('../fonts/MtNoLFRo.eot?') format('eot'), url('../fonts/MtNoLFRo.woff') format('woff'), url('../fonts/MtNoLFRo.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1.info_pagina{
+	font-family: MetaNormalRo, Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+
+h2.info_pagina{
+	float: left;
+	font-family: /*MetaNormalRo,*/ Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-left: 16px; 
+	font-weight: bold;
+	clear: both;
+}
+
+h3 {
+	font-family: MetaNormalRo, Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+/
+ * * ----------------------------------------------
+	Header
+---------------------------------------------- */
+
+#header {
+	width:960px; 
+	height:208px;
+	margin-bottom:10px;
+}
+
+#header #header_top {
+	width:960px; 
+	height:148px;
+}
+
+#header #header_top_left {
+	width:396px; 
+	height:148px;
+	float:left;
+}
+
+	#header #header_top_left .logo {
+		float:left;
+		width:388px; 
+		height:96px; 
+		margin:30px 0 0 -89px;
+		background-image: url('../img/logo_thebis.png'); 
+		background-repeat:no-repeat;
+	}
+
+#header #header_top_right {
+	float:left;
+	width:564px; 
+	height:148px;
+}
+
+	#header #header_top_right #topnav{
+		background-color:#f2fafd;
+		text-align:center;
+		float:right;
+		width:344px;
+		height:18px;
+		margin-top:7px;
+		padding-top:3px;
+		font-size:11px;
+		color:#071d25;
+	}
+	
+	#header #header_top_right #topnav a:link, a:visited{
+		color:#071d25;
+		text-decoration:none;
+	}
+	
+	#header #header_top_right #topnav  a:hover{
+		color:#1d789a;
+		text-decoration:none;
+	}
+
+	#header #header_top_right #topnav .links li{
+		display:inline;
+	}
+
+
+	#header #header_top_right #contactinfo {
+		float:right;
+		width:554px; 
+		height:99px;
+		margin-top:21px;
+		background-image: url('../img/contact_info.png');
+		background-repeat:no-repeat;		
+	}
+
+#header #header_bot {
+	width:960px; 
+	height:67px;
+}
+
+#header #header_bot #main_nav {
+	width:960px; 
+	height:62px;
+	margin-bottom:10px;
+	background-repeat:no-repeat;	
+}
+
+#header #header_bot #main_nav .home_link {
+	width:73px; 
+	height:62px;
+	float:left;
+	background-image: url('../img/nav_home.png');
+	background-repeat:no-repeat;	
+}
+
+#header #header_bot #main_nav .home_link:hover{
+	width:73px; 
+	height:62px;
+	float:left;
+	background-image: url('../img/hover_nav_home.png');
+	background-repeat:no-repeat;	
+}
+
+#header #header_bot #main_nav .home_link2 {
+	width:73px; 
+	height:62px;
+	float:left;
+	background-image: url('../img/hover_nav_home.png');
+	background-repeat:no-repeat;	
+}
+
+
+/* ----------------------------------------------
+	Homepagina Content
+---------------------------------------------- */
+
+#main #col-main #slider { 
+	width:718px; 
+	height:235px; 
+	border:1px solid #b2dced;
+	margin-bottom:16px;
+	float:left;
+}
+
+#main #col-main #thebis_toppers_container { 
+	width:718px; 
+	height:auto;
+	border:1px solid #b2dced;
+	float:left;
+}
+
+#main #col-main  #mainblock_title { 
+	float:left;
+	width:704px; 
+	height:26px; 
+	color:#fff;
+	padding:10px 0 0 14px;
+	background-image: url('../img/bg_titlebar.png');
+	background-repeat:repeat-x;	 
+}
+		
+	#main #col-main #thebis_toppers_container  #top_items_row01 { 
+		float:left;
+		width:704px; 
+		height:236px; 
+		margin-top:15px;
+		padding:0 0 0 14px;
+		overflow:hidden;		
+	}		
+
+	#main #col-main #thebis_toppers_container #top_items_row02 { 
+		width:704px; 
+		height:247px; 
+		margin-top:15px;
+		padding:0 0 0 14px;
+		float:left;
+		overflow:hidden;
+	}
+	
+	#main #col-main #thebis_toppers_container #banner_114 { 
+		width:698px; 
+		height:112px; 
+		background-color:lightblue; 
+		border:1px solid #b2dced;
+		float:left;
+		margin:0 0 0 9px;	
+	}
+	
+/* ----------------------------------------------
+	Homepage > Toppers
+---------------------------------------------- */
+
+#top_items_row01 .category-products{
+	float:left;
+	font-size:11px;
+}
+	
+	#col-main .category-products .item {
+		float:left;
+		width:164px;
+		padding-left:10px;
+		overflow:hidden;
+		border-left:1px solid #b2dced;
+	}
+	
+	#col-main .category-products .item .price-box {
+		color:#1d789a;
+		font-size:14px;
+		margin-top:3px;
+		height:;
+	}
+	
+	#col-main .category-products .item a:link, a:visited {
+		text-decoration:none;
+		color:#071d25;
+	}
+	
+	#col-main .category-products .item h2 {
+		height:20px;
+		font-size:13px;
+		color:#071d25;
+		overflow:hidden;
+		line-height:20px;
+	}
+	
+	#col-main .category-products .first {
+		float:left;
+		border:none;
+	}
+
+	#col-main .category-products .last {
+		float:left;
+		border-left:1px solid #b2dced;
+	}
+	
+	#col-main .category-products .item .btn-cart {
+		float:left;
+		width:69px;
+		height:24px;
+		color:#fff;
+		border:0;
+		margin-top:8px;
+		text-align:center;
+		cursor:pointer;
+		font-size:14px;
+		font-family: MetaNormalRo, Arial, Helvetica, sans-serif;
+		background-image: url('../img/bg_button_addcart.png');
+		background-repeat:repeat-x;
+	}
+	
+	#col-main .category-products .item .btn-cart:hover {
+		background: #fff;
+		color:#ff6d07;
+		border:1px solid #ff6d07;
+	}
+	
+	#col-main .category-products .products-grid .item .btn-details {
+		float:left;
+		width:69px;
+		height:18px;
+		font-size:13px;
+		color:#ff6d07;
+		display:block;
+		background-color:#fff;
+		border:1px solid #ff6d07;
+		margin:8px 0 0 7px;
+		padding-top:4px;
+		text-align:center;
+		text-decoration:none;
+		cursor:pointer;
+		font-size:14px;
+		font-family: MetaNormalRo, Arial, Helvetica, sans-serif;
+	}
+
+	#col-main .category-products .products-grid .item .btn-details:hover {
+		background: url(../img/bg_button_addcart.png) 0 0 repeat-x;
+		color:#fff;
+	}
+	
+/* ----------------------------------------------
+	Footer
+---------------------------------------------- */
+
+#footer {
+	width:940px;
+	height:52px;
+	background-image: url('../img/bg_footer.png');
+	background-repeat:no-repeat;
+	margin-top:20px;
+	margin-bottom:45px;
+	padding:15px 0 0 20px;
+	float:left;
+}
+
+	#footer #footer_links {
+		float:left;
+	}
+
+	#footer #footer_links li {
+		display:inline;
+		font-size:12px;
+		float:left;
+	}
+
+	#footer #footer_links li a:link, a:visited {
+		color:#071d25;
+		text-decoration:none;
+	}
+	
+	#footer #footer_links li a:hover {
+		color:#1d789a;
+		text-decoration:none;
+	}
+	
+	#footer #footer_links .ddots_bottom{
+		width:24px;
+		float:left;
+		text-align:center;
+		font-size:12px;
+	}
+	
+#footer .copyright_info {
+	float:left;
+	font-size:11px;
+	color:#1d789a;
+	margin-top:10px;
+}
+
+/* ----------------------------------------------
+	Sidebar > QuickSearch
+---------------------------------------------- */
+
+.col-right .form-search {
+	float:left; 
+	width:217px; 
+	height:37px; 
+	padding-top:14px;
+	background-color:#1d789a; 
+	border:1px solid #b2dced; 
+}
+
+	.col-right .form-search label {
+		text-indent:-999em; 
+		overflow:hidden;
+	}
+	
+	.col-right .form-search input {
+		float:left; 
+		width:166px; 
+		height:22px; 
+		margin:0 0 0 9px; 
+		text-indent:7px; 
+		border:0; 
+		text-transform:capitalize;
+	}
+	
+	.col-right .form-search input.input-text {
+		float:left; 
+		width:166px;
+	}
+
+	.col-right .form-search button.button {
+		float:left; 
+		width:31px; 
+		height:24px; 
+		background-color:#ff9c00; 
+		border:0; 
+		cursor:pointer;
+		margin-left:2px; 
+		background-position:center; 
+		background-image: url('../img/bg_zoekglas.png'); 
+		background-repeat:no-repeat;
+	}
+	
+	.col-right .form-search button.button:hover {
+		float:left; 
+		width:31px; 
+		height:24px; 
+		background-color:#ff9c00; 
+		border:1px solid #FF6D07; 
+		cursor:pointer;
+		margin-left:2px; 
+		background-color:#fff;
+	}
+	
+	.col-right .form-search button.button span {
+		border:0;
+	}
+	
+	.col-right .form-search .search-autocomplete { 
+		z-index:999; 
+		left:40px !important; 
+		top:22px !important;
+	}
+	
+	.col-right .form-search .search-autocomplete ul { 
+		border:1px solid #5c7989; 
+		background-color:#f9f5f0;
+	}
+	
+	.col-right .form-search .search-autocomplete li { 
+		text-align:left; 
+		border-bottom:1px solid #f4eee7; 
+		padding:2px 8px 1px 8px; 
+		cursor:pointer;
+	}
+	
+	.col-right .form-search .search-autocomplete li .amount { 
+		float:right; 
+		font-weight:bold; 
+	}
+	
+	.col-right .form-search .search-autocomplete li.odd { 
+		background-color:#fffefb;	
+	}
+	
+	.col-right .form-search .search-autocomplete li.selected { 
+		background-color:#f7e8dd
+	}
+
+
+/* ----------------------------------------------
+	Sidebar > Cart
+---------------------------------------------- */
+
+.block-cart {
+	float:left;
+	width:217px;
+	min-height:166px;
+	margin-top:16px;
+	border:1px solid #b2dced;
+}
+
+.block-title {
+	float:left;
+	width:203px; 
+	height:26px; 
+	color:#fff;
+	padding:10px 0 0 14px;
+	background-image: url('../img/bg_titlebar.png');
+	background-repeat:repeat-x; 
+}
+
+.block-cart .block-content {
+	float:left;
+	width:202px;
+	min-height:40px;
+	font-size:12px;
+	color:#071d25;
+	padding-top:16px;
+	padding-left:14px;
+	padding-bottom:20px;
+}
+
+	.block-cart .block-content p.subtotal {
+		float:left;
+		margin-top:5px;
+		margin-left:52px;
+		color:#071D25;
+	}
+ 
+	.block-cart .block-content p.subtotal .product_price {
+		color:#1d789a;
+	}
+	
+	.block-cart .block-content .summary p.amount a:link, a:visited { 
+		margin-bottom:10px;
+		line-height:14px;
+		color:#071d25;
+		text-decoration:none;
+	 }
+	 
+	 .block-cart .block-content .summary p.amount {
+	 	margin-bottom:14px;
+		line-height:14px;
+		font-weight:bold;
+	 }
+	
+	 .block-cart .block-content .mini-products-list .item  {
+		margin-bottom:7px;
+		margin-left:-4px;
+		float:left;
+	 }
+	 
+	 .block-cart .block-content .mini-products-list .item  a{
+		float:left;
+	 }
+	 
+	 .block-cart .block-content .mini-products-list .product-details a:link, a:visited {
+	 	float:left;
+	 	color:#071d25;
+	 	line-height:16px;
+	 } 
+	 
+	 .block-cart .block-content .mini-products-list .product-details {
+	 	float:left;
+	 	margin-top:9px;
+	  	margin-left:3px;
+	  	color:#1d789a;
+	 } 
+	 
+	 .block-cart .block-content .mini-products-list .product-details .product-name {
+	  	width:144px;
+	  	float:left;
+	  	overflow:hidden;
+	 }
+	 
+	 .block-cart .block-content .mini-products-list .product-details .product-name a:link, a:visited {
+	 	float:left;
+	 	text-decoration:none;
+	 }
+	  
+	 .block-cart .block-content .mini-products-list .product-details .prod-count {
+	 	clear:left;
+	 	float:left;
+	 	line-height:16px;
+	 }
+	
+	 .block-cart .block-content .mini-products-list .product-details .price {
+		float:left;
+		margin-left:5px;
+	  	margin-right:2px;
+	  	line-height:16px;
+	 }
+	 
+	 .block-cart .block-content .mini-products-list .product-details .btn-remove {
+	  	float:left;
+	  	margin-left:5px;
+	 } 
+ 
+.block-cart .block-kassa {
+ 	float:left;
+ 	width:217px;
+ 	height:70px;
+ 	background-color:#dcf1f9;
+}
+
+	.block-cart .block-kassa .kassa_link {
+		width:125px;
+	  	height:23px;
+	  	display:block;
+	  	color:#fff;
+	  	text-decoration:none;
+	  	text-align:center;
+	  	padding-top:7px;
+	  	margin:18px 0 0 42px;
+	  	background-image: url('../img/bg_button_kassa.png');
+	  	background-repeat:repeat-x; 
+	}
+	 
+	.block-cart .block-kassa .kassa_link:hover {
+	  	width:123px;
+	  	height:21px;
+	  	background:#fff;
+	  	color:#ff6d07;
+	  	border:1px solid #ff6d07;
+	}
+
+/* ----------------------------------------------
+	Sidebar > Recent bekeken
+---------------------------------------------- */
+
+#main .col-right .block-viewed {
+	float:left;
+	width:217px;
+	border:1px solid #b2dced;
+	margin-top:16px;
+}
+	
+	#main .col-right .block-viewed p.product-name {
+		font-size:12px;
+		line-height:20px;
+	}
+	
+	
+	#main .col-right .block-viewed p.product-name a:link, a:visited {
+		text-decoration:none;
+		color:#071D25;
+	}
+	
+		
+	#main .col-right .block-viewed p.product-name a:hover {
+		color:#1d789a;
+	}
+	
+	#main .col-right .block-viewed .block-content {
+		float:left;
+		width:100%;
+		padding:10px 0 10px 17px;
+	}
+	
+/* ----------------------------------------------
+	Sidebar > Waarom Thebis
+---------------------------------------------- */
+
+#main .col-right #waarom_thebis {
+	float:left;
+	width:217px;
+	min-height:261px;
+	margin-top:16px;
+	border:1px solid #b2dced;
+}
+
+#main .col-right #waarom_thebis .waarom_vlak {
+	float:left;
+	width:217px;
+	height:42px;
+	margin-left:0;
+	padding-top:14px;
+	background-image: url('../img/arrow_waarom.png');
+	background-repeat:no-repeat;
+}
+
+#main .col-right #waarom_thebis .waarom_vlak .reden {
+	float:left;
+	width:120px;
+	margin-left:42px;
+	line-height:16px;
+	color:#071d25;
+	font-size:15.5px;
+	font-family: MetaNormalRo, Arial, Helvetica, sans-serif;
+}
+
+.vlak_wit {
+	background-color:#fff;
+}
+
+.vlak_blauw {
+	background-color:#edf8fc;
+}
+
+/* ----------------------------------------------
+	Product Detail Pagina
+---------------------------------------------- */
+
+#breadcrumb_container {
+	width:702px;
+	height:32px; 
+	padding-top:18px;
+	padding-left:16px;
+	margin-bottom:16px;
+	background-color:#fff;
+	border:1px solid #b2dced;
+	float:left;
+	font-size:12px;
+}
+
+	#breadcrumb_container .breadcrumbs ul li {
+		float:left;
+		color:#071d25;
+	}
+
+	#breadcrumb_container .breadcrumbs a:link, a:visited {
+		float:left;
+		text-decoration:none;
+		color:#071d25;
+	}
+
+	#breadcrumb_container p.breadcrumb_tekst  {
+		float:left;
+		color:#15566f;
+		line-height:12px;
+	}
+
+#product_info_container {
+	float:left;
+	width:718px;
+	height:500px;
+	border:1px solid #b2dced;
+}
+	
+	#product_info_container p.note-msg {
+		font-size: 12px;
+		float:left;
+		line-height:18px;
+		margin:9px 10px 21px 16px;
+	}
+
+	#product_info_container .product-view {
+		float:left;
+	}
+	
+	#product_info_container .product-view  .product-essential {
+		float:left;
+		width:280px;
+		height:295px;
+		margin-top:34px;
+	}
+
+	#product_info_container .product-view  .product-essential .product-img-box {
+		float:left;
+		width:280px;
+		height:295px;
+		border-right:1px solid #bbe0ef;
+	}
+
+	#product_info_container .product-view  .product-collateral {
+		float:left;
+		width:400px;
+		font-size:12px;
+		margin-top:34px;
+		margin-left:18px;
+		line-height:15px;
+	}
+
+	#product_info_container .product-view  .product-collateral .box-description {
+		height:240px;
+		overflow:hidden;
+	}
+	
+	#product_info_container .product-view  .product-collateral #product_bottom {
+		float:left;
+		width:100%;
+		height:27px;
+		margin-top:34px;
+	}
+
+	#product_info_container .product-view  .product-collateral #product_bottom .price-box {
+		float:left;
+		color:#1d789a;
+		font-size:16px;
+		margin-top:5px;
+	}
+	
+	#product_info_container .product-view  .product-collateral #product_bottom .add-to-box {
+		float:left;
+		height:27px;
+		margin-left:24px;
+	}
+
+	#product_info_container .product-view  .product-collateral #product_bottom .add-to-box  button.btn-cart {
+		width:138px;
+		height:27px;
+		color:#fff;
+		border:none;
+		text-align:center;
+		cursor:pointer;
+		font-size:16px;
+		font-family: MetaNormalRo, Arial, Helvetica, sans-serif;
+		background-image: url('../img/bg_button_kassa.png');
+		background-repeat:repeat-x;
+	}
+	
+	#product_info_container .product-view .product-collateral #product_bottom .add-to-box  button.btn-cart:hover {
+		background:#fff;
+		color:#ff6d07;
+		border:1px solid #ff6d07;
+	}
+	
+/* ----------------------------------------------
+	Product Category Pagina
+---------------------------------------------- */
+
+#product_info_container #category_list_container {
+	float:left;
+	width:auto;
+	height:auto;
+	padding:10px 0 0 10px;
+	clear:both;
+}
+
+#product_info_container .category-description {
+	font-size: 12px;
+	float:left;
+	line-height:18px;
+	margin:9px 10px 21px 16px;
+}
+
+#product_info_container #category_list_container .category-products .first {
+ float:left;
+ border:none;
+}
+
+/* ----------------------------------------------
+	Info Pagina
+---------------------------------------------- */
+
+#pagina_info_container {
+	float:left;
+	width:718px;
+	border:1px solid #b2dced;
+	font-size:12px;
+}
+
+	#pagina_info_container .std ul {
+		float:left;
+		line-height:16px;
+		margin:18px 10px 33px 16px;
+	}
+	
+	#pagina_info_container p {
+		float:left;
+		line-height:18px;
+		margin:9px 10px 21px 16px;
+	}
+	
+	#pagina_info_container a:link, a:visited {
+		color: #071d25;
+	}
+
+	#pagina_info_container a:hover {
+		color: #1d789a;
+	}
+
+
+
+
+
+
+
+
+
